@@ -87,7 +87,7 @@ const renderStats = (stats) => {
         </div> 
     </div>    
     <div class="about__">
-        <a href="">View more about ${player.name}</a>
+        <a href="/player/${player.id}/${player.name}">View more about ${player.name}</a>
         <span class="line--"></sapn>
     </div>     
     `  

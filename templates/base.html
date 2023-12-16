@@ -12,12 +12,15 @@
 
 </head>
  
-<body>    
+<body>  
+
     <header>         
         <div class="header_title">
-            <h3><a href="">Football Player Charts (beta)</a></h3>
+            <h3><a href="{{ url_for('home') }}">Football Player Charts (beta)</a></h3>
         </div>           
     </header>  
+
+
     {% block content %}{% endblock %}
     <footer>
         <h6>Football Player Charts | Created by <a href="https://github.com/Garridot" target="_blank">Tomas Garrido</a></h6>
