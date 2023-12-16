@@ -48,6 +48,7 @@ Visit the web application in your browser and start exploring football player st
 - **utils/**: Contains utility modules for handling API requests and computing statistics.
 - **static/**: Holds static files such as CSS styles, icons, and JavaScript files.
 - **templates/**: Contains HTML templates for the application views.
+- **.github/**: Contains a cron job to keep the server running.  
 
 ## Contribution
 1. Fork the repository.
