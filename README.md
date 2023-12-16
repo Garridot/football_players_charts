@@ -13,14 +13,14 @@ Football Player Charts is a web application built with Flask that allows users t
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/your-project.git
+git clone https://github.com/Garridot/football_players_charts.git
 
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd your-project
+cd football_players_charts
 ```
 
 3. Install dependencies:
