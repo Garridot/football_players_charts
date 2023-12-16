@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/player_stats.css') }}"> 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/grain.css') }}">
+
+<main>
+    <div class="main-background">
+        <div class="image"></div>     
+    </div>
+    <div class="main-body"> 
+    </div>  
+</main>
+<div class="filters__">
+    <div class="title">
+        <p>filters</p>
+    </div>
+    <div class="container">
+        <div class="team--filter">
+            <label for="teams">teams:</label>
+            <select id="positions" name="positions">
+                <optgroup label="Teams">                  
+                </optgroup>                
+            </select>            
+        </div>
+        <div class="competitions--filter">
+            <label for="competitions">competitions:</label>
+            <select id="positions" name="positions">
+                <optgroup label="Competitions">                  
+                </optgroup>                
+            </select>   
+        </div>        
+        <div class="season--filter">
+            <label for="seasons">seasons:</label>
+            <select id="positions" name="positions">
+                <optgroup label="Seasons">                  
+                </optgroup>                
+            </select>   
+        </div>
+        <div class="button--filter">
+            <input type="button" value="Filter" onclick="filterStats()">
+        </div>
+        
+    </div>
+</div>
+<div class="load--">
+    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>  
+
+<div class="wrapper--">
+    <div class="stats__">
+        <section class="general__">
+            <div class="section-title">
+                <h1>General Stats</h1>
+            </div>
+            <div class="container">            
+            </div>    
+        </section>
+        <section class="goals_involvements">
+            <div class="section-title">
+                <h1>goals involvements</h1>
+            </div>
+            <div class="page--">  
+                <div class="description--">
+                </div>
+                <div class="graph--">            
+                    <canvas id="goalsInvolvementsChart"></canvas>
+                    <div class="donut-text">                                              
+                    </div>
+                    <p>Source: Transfermarker.com</p>
+                </div>
+            </div>
+        </section>
+        <section class="perfom_seasons">
+            <div class="section-title">
+                <h1>General Stats</h1>
+            </div>
+            <div class="page--">       
+                <div class="graph--">
+                    <canvas id="perfomSeasonsChart"></canvas>
+                    <p>Source: Transfermarker.com</p>
+                </div>
+                <div class="description--">
+                    <li>Best seasons:</li>
+                    <ul>    
+                    </ul>
+                </div>        
+            </div>
+        </section>
+        <section class="perfom_position">
+            <div class="section-title">
+                <h1>Performance by position</h1>
+            </div>    
+            <div class="page--">  
+                <div class="description--">
+                    <ul>
+                        <li>As</li>
+                        <li>Games</li>
+                        <li>Goals</li>
+                        <li>Assists</li>                
+                    </ul> 
+                    <div class="data--"></div>
+                </div>             
+                <div class="graph--">
+                    <canvas id="performPosition"></canvas>
+                    <p>Source: Transfermarker.com</p>
+                </div>        
+            </div>
+        </section>
+        <section class="competitions">
+            <div class="section-title">
+                <h1>Performance by Competition</h1>
+            </div>
+            <ul class="table"> 
+                <li class="t-head">Competition</li>
+                <li class="t-head">MP</li>
+                <li class="t-head">Team's goals</li>
+                <li class="t-head">Gls.</li>
+                <li class="t-head">Assts.</li>
+                <li class="t-head">G/A %</li>            
+            </ul>
+            <div class="data-performace"></div>  
+            <p>Source: Transfermarker.com</p>          
+        </section>
+    </div>
+</div>
+
+
+<!-- Chart JS -->
+<script>
+    // Use the tojson filter to convert Python object to JSON
+    const response = {{ context | tojson | safe }};
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static', filename='js/media.js') }}"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/player_stats.js') }}"></script>
+
+{% endblock %}

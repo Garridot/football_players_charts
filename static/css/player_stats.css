@@ -1,0 +1,884 @@
+main{
+    height: 100vh;
+    width: 100%;   
+    margin: 0 0 10vw; 
+}
+
+main .main-background{
+    position: absolute;
+    top: 0;
+    width: 40%;
+    height: 100%;
+    right: 0; 
+    overflow: hidden; 
+}
+
+@keyframes scaleAnimation {
+    to{ transform: scale(1.2);}
+    from{ transform: scale(1);}    
+}
+
+.main-background .image{
+    width: 100%;
+    height: 100%;   
+    transform: scale(1.2);    
+    filter: saturate(0.2);
+    animation: scaleAnimation 30s alternate-reverse infinite linear;    
+}
+
+main .main-background::after{    
+    content: "";
+    background: linear-gradient(90deg,rgba(13, 13, 13, 1) 0%,transparent 90%);
+    height: 100vh;
+    top: 0;
+    right: 0;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+main .main-background::before{    
+    content: "";
+    background: linear-gradient(0deg,rgba(13, 13, 13, 7) 0%,transparent 20%);
+    height: 100vh;
+    top: 0;
+    right: 0;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.main-body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+    position: relative;
+    z-index: 5;
+}
+
+.main-body .main-title h1{
+    font-size: 10vw;
+    color: var(--primary-color);
+    width: 60%;
+    line-height: .8;
+    font-family: "NeueMontreal-Italic";
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.main-stats {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    padding: 0 0 2rem;
+}
+.main-stats ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-stats li {
+    color: var(--primary-color);    
+    letter-spacing: 1px;
+    margin: 0 1rem;    
+    font-family: "NeueMontreal-Light";
+    text-transform: uppercase;   
+}
+
+.main-stats li::marker {
+    color: #720303; 
+  }
+
+/* #### SECTION FILTERS #### */
+
+.filters__{
+    width: 95%;
+    margin: 20vh auto;
+
+}
+
+.filters__ .title {
+    margin: 0rem auto 3rem;
+    width: 96%;
+    padding: 0 0 1rem;
+    border-bottom: 1px solid #adadad3f;
+}
+
+.filters__ .title p{
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    font-size: 1vw;
+    text-transform: uppercase;    
+}
+
+.filters__ .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filters__ .season--filter,
+.filters__ .team--filter,
+.filters__ .competitions--filter{
+    flex: 1 0 30%;
+    display: block;
+}
+
+.filters__ label{
+    font-size: 1vw;
+    color: #aaa;    
+    font-family: "NeueMontreal-Light";
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    width: 90%;
+    margin: auto;   
+    padding: 0 0 1rem;
+    display: block;    
+    text-align: left; 
+}
+.filters__ optgroup{ font-weight: 100; }
+.filters__ select {
+    width: 90%;
+    margin: auto;
+    color: var(--primary-color);
+    background: var(--backgroud-color);
+    padding: 1rem;
+    font-size: 1.5vw;
+    font-family: "NeueMontreal-Light";
+    letter-spacing: 2px;
+    border: 1px solid rgba(170, 170, 170, 0.2);
+}
+
+.button--filter{
+    width: 97%;       
+    margin: 3rem auto 0; 
+    display: block;  
+}
+
+.button--filter input{
+    cursor: pointer;
+    width: 100%;
+    border: 1px solid rgba(170, 170, 170, 0.2);
+    padding: .8rem;
+    font-size: 1.5vw;
+    letter-spacing: 2px;
+    font-family: "NeueMontreal-Light"; 
+    background: #17161b;  
+    /* #23202b */
+    color: var(--primary-color); 
+    text-transform: uppercase;
+    transition: all .2s;
+}
+
+.button--filter input:hover{
+    background: #23202b;
+    transition: all .2s;
+}
+
+
+/* #### NOT FOUND DIV #### */
+
+.not_found-- {
+    width: 95%;
+    margin: auto;
+}
+.not_found-- p{
+    color: #aaa;
+    letter-spacing: 2px;
+    font-size: 1.7vw;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* #### GENERAL STATS #### */
+
+section.general__{
+    width: 95%;
+    margin: 5rem auto 10rem;
+}
+
+section.general__ .section-title h1{
+    font-size: 4vw;
+    width: 50%;
+    color: #aaa;
+    margin: 1rem auto 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: "NeueMontreal-Italic";
+    text-align: center;
+}
+
+.container{
+    text-align: center;    
+}
+
+.container .row{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.container .stat {
+    flex: 1 0 30%;
+    height: 50vh;
+    display: table;
+    transition: all 1s;
+}
+
+.container .stat:hover{
+    background: rgb(29, 29, 31);
+    transition: all 1s;
+} 
+
+.container .stat span{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.container .stat p{
+    font-size: 5vw;
+    margin: 0;
+    text-transform: uppercase;    
+    color: var(--primary-color); 
+}
+
+.container .stat p:nth-of-type(1){
+    font-size: 7vw;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: "NeueMontreal-Italic";
+    color: #720303;
+}
+
+.container .stat p:nth-of-type(2){
+    font-size: x-large;
+    width: 50%;
+    color: #aaa;
+    margin: 1rem auto 0;
+    font-family: "NeueMontreal-Light";
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+
+
+
+/* #### GOALS INVOLVEMENTS #### */
+
+section.goals_involvements{
+    width: 95%;
+    margin: auto;
+}
+
+section.goals_involvements .section-title{
+    text-transform: uppercase;
+    margin-bottom: 15vh;
+}
+
+section.goals_involvements .section-title h1{
+    font-size: 1vw;
+    font-family: "NeueMontreal-Light";
+    letter-spacing: 2px;
+    color: #adadad;
+    border-bottom: 0.1px solid #c7c7c74f;
+    padding: 0 0 1rem;
+}
+
+section.goals_involvements .page-- {
+    display: flex;
+    justify-content: space-between;       
+}
+
+
+section.goals_involvements .page-- .graph--{    
+    width: 50%;    
+    height: 80vh;
+    margin: 0 0 2rem;   
+    transition: all 1s; 
+    margin: auto;
+    position: relative;
+}
+
+
+
+section.goals_involvements .graph-- canvas{
+    margin: auto;
+    margin: 0 auto 2rem ;
+}
+
+section.goals_involvements .donut-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    right: 0;
+    bottom: 0;
+    display: table;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+section.goals_involvements .donut-text .donut-table {
+    display: table-cell;
+    vertical-align: middle;    
+}
+
+section.goals_involvements .donut-text h1 {
+    font-size: 2vw;
+    margin: 0;
+    padding: 0;
+    line-height: .9;
+    color: #aaa;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+
+section.goals_involvements .graph-- p{
+    text-align: end;
+    color: var(--primary-color);
+}
+
+section.goals_involvements .description--{
+    width: 40%;
+    margin: 8rem auto;
+}
+
+section.goals_involvements .description-- li{  
+    text-transform: uppercase;
+    list-style: none;    
+    padding: 1vw 0;
+    border-bottom: 1px solid #c7c7c74f;
+    font-size: 1.2vw;
+    font-family: "NeueMontreal-Light";
+    color: #c7c7c7;
+    margin: 0;
+    letter-spacing: 2px;    
+}
+
+
+
+/* #### PERFORMANCE BY SEASONS #### */
+
+section.perfom_seasons{
+    width: 95%;
+    margin: 5rem auto ;
+}
+
+section.perfom_seasons .section-title{
+    text-transform: uppercase;
+    margin-bottom: 15vh;
+}
+
+section.perfom_seasons .section-title h1{
+    font-size: 1vw;
+    font-family: "NeueMontreal-Light";
+    letter-spacing: 2px;
+    color: #adadad;
+    border-bottom: 0.1px solid #c7c7c74f;
+    padding: 0 0 1rem;
+}
+
+section.perfom_seasons .page-- {
+    display: flex;
+    justify-content: space-between;   
+    align-items: center;
+}
+
+section.perfom_seasons .page-- .graph--{
+    width: 70%;    
+    height: 80vh;
+    margin: 0 0 2rem;    
+    transition: all 1s;  
+}
+section.perfom_seasons .page-- .graph-- p{
+    text-align: end !important;
+    font-size: .8rem;
+    margin: 2rem 0 !important;
+    width: 100%;
+    opacity: 1 !important;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+
+section.perfom_seasons .description-- {
+    width: 25%; 
+}
+
+section.perfom_seasons ul li{
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin: .5rem auto 0;
+    font-family: "NeueMontreal-Light";
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    list-style: none; 
+}
+
+
+
+/* #### PERFORMANCE BY POSITION #### */
+
+section.perfom_position{
+    width: 95%;
+    margin: 5rem auto ;
+}
+
+section.perfom_position .section-title{
+    text-transform: uppercase;
+    margin-bottom: 15vh;
+}
+
+section.perfom_position .section-title h1{
+    font-size: 1vw;
+    font-family: "NeueMontreal-Light";
+    letter-spacing: 2px;
+    color: #adadad;
+    border-bottom: 0.1px solid #c7c7c74f;
+    padding: 0 0 1rem;
+}
+
+section.perfom_position .page-- .page-title h6{
+    color: var(--primary-color);
+    font-size: 1.4vw;
+    text-transform: uppercase;    
+    text-align: center;
+    margin: 0 0 4rem 0;     
+}
+
+section.perfom_position .page--{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section.perfom_position .page-- .graph--{
+    width: 60%;   
+    margin: 0 0 2rem;   
+    transition: all 1s;  
+}
+
+.description-- {
+    width: 35%;
+}
+
+section.perfom_position ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 .5rem;   
+}
+
+section.perfom_position ul li{
+    color: var(--primary-color);
+    font-family: "NeueMontreal-Light";
+    letter-spacing: 2px;
+    /* text-transform: uppercase; */
+    list-style: none;
+    flex: 0 0 auto;
+    width: 16.66666667%;
+    font-size: 1vw;   
+    padding: 0 1rem;
+}
+
+section.perfom_position .page-- .graph--{
+    height: 80vh;
+}
+
+section.perfom_position .page-- .graph-- p{
+    color: var(--primary-color);
+}
+
+
+
+/* #### PERFORMANCE BY COMPETIIONS #### */
+
+section.competitions{
+    width: 95%;
+    margin: auto;
+}
+
+section.competitions .section-title {
+    text-transform: uppercase;
+    margin-bottom: 10vh;
+}
+
+section.competitions .section-title h1 {
+    font-size: 1.5vw;    
+    font-family: "NeueMontreal-Italic";
+    letter-spacing: 2px;
+    color: var(--primary-color);    
+    padding: 0 0 1rem;
+    font-weight: 100;
+    text-align: center;
+    width: 100%;
+    font-size: 2.5vw;
+}
+
+section.competitions ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #adadad3f;
+    transition: all .2s;
+    padding: 1rem;
+}
+
+section.competitions ul:hover{
+    background: rgb(29, 29, 31);
+    transition: all .2s;
+} 
+
+
+section.competitions ul li {
+    font-family: "NeueMontreal-Light";
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    font-size: 1.1vw;
+    text-transform: uppercase;
+    flex: 0 0 auto;
+    width: 16.66666667%;
+    text-align: center;   
+}
+
+section.competitions ul li:nth-child(1) {
+    text-align: left;
+}
+section.competitions ul li:nth-child(6) {
+    text-align: right;
+}
+
+section.competitions p{
+    text-align: end !important;
+    font-size: .8rem;
+    margin: 2rem 0 !important;
+    width: 100%;
+    opacity: 1 !important;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+
+/* #### MEDIA QUERYE : 900PX #### */
+
+@media(max-width:900px){
+    
+    main .main-background {        
+        width: 100%;       
+        z-index: -1;
+    }
+
+    .container .stat {       
+        height: 35vh;        
+    }
+
+    section.goals_involvements .section-title h1 {
+        font-size: 2vw;
+    }
+    section.goals_involvements .description-- li {        
+        font-size: 2vw;
+    }
+    section.goals_involvements .graph-- p {        
+        letter-spacing: 2px;
+    }
+
+
+    section.perfom_seasons .section-title h1 {
+        font-size: 2vw;
+    }
+    section.perfom_seasons .page-- {
+        display: block;
+    }
+    section.perfom_seasons .page-- .graph-- {
+        width: 100%;
+    }
+    section.perfom_seasons .page-- .graph-- p {        
+        font-size: 1rem;        
+        letter-spacing: 3px;
+        font-size: 2vw;
+    }
+    
+    section.perfom_seasons .description-- {
+        width: 100%;
+    }
+
+    section.perfom_seasons ul li {
+        font-size: 2vw;
+    }
+
+
+    section.perfom_position .section-title h1 {
+        font-size: 2vw;
+    }
+    section.perfom_position .page-- {
+        display: block;
+    }
+    section.perfom_position .description-- {
+        width: 100%;
+        margin: 0 0 5rem 0;
+    }
+    section.perfom_position ul li {        
+        font-size: 1.8vw;        
+    }
+    section.perfom_position .page-- .graph-- {
+        width: 100%;
+    }
+    section.perfom_position .page-- .graph-- p {  
+        font-size: 2vw;
+    }
+
+    section.competitions .section-title {        
+        margin-bottom: 8vh;
+    }
+    section.competitions .section-title h1 {        
+        font-size: 3vw;
+    }
+    section.competitions ul li {        
+        font-size: 1.5vw;
+    }
+    
+}
+
+@media(max-width:800px){
+
+    .filters__ .title p {        
+        font-size: 1.4vw;        
+    }
+    .filters__ label {
+        font-size: 1.4vw;        
+    }
+    .filters__ .season--filter, .filters__ .team--filter, .filters__ .competitions--filter{
+        flex: 0 0 50%;
+        display: block;
+        margin: 1rem 0;
+    }
+    .filters__ select {        
+        font-size: 1.7vw;        
+    }
+    .button--filter input {        
+        font-size: 1.8vw;
+    }
+
+    .not_found-- p {        
+        font-size: 2vw;        
+    }
+
+    .container .stat {
+        flex: 1 0 50%;
+    }
+
+    .container .stat p:nth-of-type(1) {
+        font-size: 10vw;
+    }
+    .container .stat p:nth-of-type(2) {
+        font-size: large;
+    }
+
+
+    section.goals_involvements .page-- {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    section.goals_involvements .description-- {
+        width: 100%;       
+    }
+    section.goals_involvements .page-- .graph-- {
+        width: 100%;        
+    }
+    section.goals_involvements .donut-text h1 {
+        font-size: 4vw;
+    } 
+
+
+    section.perfom_seasons .page-- .graph--{
+        height: 50vh;
+    }
+
+
+    section.perfom_position .page-- .graph--{
+        height: 50vh;
+    }
+    section.perfom_position ul li {
+        font-size: 2vw;
+    }
+
+    section.competitions ul li {
+        font-size: 1.8vw;
+        padding: 1rem 0;
+    }
+}
+
+@media(max-width:700px){
+    .filters__ .season--filter, .filters__ .team--filter, .filters__ .competitions--filter {
+        flex: 0 0 100%;        
+    }
+    .button--filter {
+        width: 90%;        
+    }
+}
+
+
+@media(max-width:600px){
+    .main-body .main-title h1{
+        font-size: 15vw;
+    }
+    .main-stats {       
+        width: 100%; 
+        padding: 0 0 5rem;       
+    }
+
+    .filters__ .title p {
+        font-size: 2vw;
+    }
+    .filters__ label {
+        width: 100%;
+        font-size: 2vw;
+    }
+    .filters__ select {
+        width: 100%;
+        font-size: 2.5vw;
+    }
+    .button--filter {
+        width: 100%;
+    }
+    .button--filter input {
+        font-size: 2.5vw;
+    }
+
+    .not_found-- p {        
+        font-size: 2.5vw;        
+    }
+
+    .container .stat {
+        flex: 1 0 50%;        
+    }
+    .container .stat p:nth-of-type(1) {
+        font-size: 15vw;
+    }    
+
+    section.goals_involvements .description-- li {        
+        font-size: 3vw;
+    }
+
+    section.perfom_seasons ul li {
+        font-size: 2.5vw;
+    }
+
+    section.perfom_position .page-- .graph-- p {  
+        font-size: 3vw;
+    }
+    section.perfom_position ul li {        
+        font-size: 2.5vw; 
+        padding: 0;       
+    }
+
+    section.competitions ul{
+        padding: 1rem 0;
+    }
+
+    section.competitions ul li {
+        font-size: 2.5vw;
+    }
+
+    section.competitions ul li:nth-of-type(3){
+        display: none;
+    }
+}
+
+@media(max-width:400px){
+    .main-body .main-title h1 {
+        font-size: 18vw;
+    }
+    .filters__ .title p {
+        font-size: 2.5vw;
+    }
+    .filters__ label {
+        font-size: 2.5vw;        
+    }
+    .filters__ select {
+        font-size: 3vw;
+    }
+    .button--filter input {
+        font-size: 3.5vw;       
+    }
+
+    .not_found-- p {        
+        font-size: 3.5vw;        
+    }
+
+    section.general__ .section-title h1{
+        font-size: 6vw;
+        width: 100%;
+    }
+    .container .stat {        
+        height: 20vh;
+    }
+    .container .stat p:nth-of-type(1){
+        font-size: 15vw;
+    }
+    .container .stat p:nth-of-type(2){
+        font-size: medium;
+    }
+
+    section.goals_involvements .section-title h1{
+        font-size: 3vw;
+    }
+    section.goals_involvements .donut-text h1 {
+        font-size: 5vw;
+    }
+    section.goals_involvements .graph-- p{
+        font-size: 3vw;
+    }
+    section.goals_involvements .description-- li{          
+        padding: 2vw 0;        
+        font-size: 3.5vw;
+    }
+
+    section.perfom_seasons .section-title h1{
+        font-size: 3vw;
+    }
+    section.perfom_seasons .page-- .graph-- p{
+        font-size: 3vw;
+    }
+    section.perfom_seasons .description--{
+        margin: 5rem 0 0;
+    }
+    section.perfom_seasons ul li{
+        font-size: 3vw;
+        text-align: end;
+    }
+
+    section.perfom_position .section-title h1{
+        font-size: 3vw;
+    }
+    section.perfom_position ul li{
+        font-size: 3vw;
+    }
+    section.perfom_position .page-- .graph-- p{
+        text-align: end;
+        font-size: 3vw;
+    }
+
+    section.competitions .section-title {        
+        margin-bottom: 2vh;
+    }
+    
+    section.competitions .section-title h1 {
+        font-size: 5vw;
+        width: 80%;
+        margin: auto;
+    }
+
+    section.competitions ul li {
+        font-size: 3vw;
+    }    
+}
+

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}"> 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/load_animation.css') }}"> 
+
+<main>
+    <div class="main-background">
+        <div class="image"></div>
+    </div>
+    <div class="main-body"> 
+        <span>
+            <h1>Football player charts</h1>            
+            <p>Exploring the  Player Performance.</p>
+        </span>            
+    </div>        
+</main> 
+<div class="load--">
+    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>    
+<div class="wrapper--">
+    <div class="player-title">
+        <h1>Player</h1>
+    </div>    
+    <section class="player-section">         
+        <div class="background-text"></div>
+        <div class="player-stats">
+            <div class="player-img">
+                <div class="image"></div>                
+            </div>   
+            <div class="player-banner"></div> 
+        </div>    
+        <div class="player-data">                                        
+        </div>
+    </section>
+    <section class="players-list-section">
+        <div class="list-title">
+            <h2>View about others players</h2>
+        </div>
+        <div class="players-list">        
+        </div>
+    </section>    
+    <section class="about-section">
+        <div class="about-title">
+            <h1>What is Football Player Charts?</h1>
+        </div>
+        <div class="about-body">
+            <div class="description">
+                <p>
+                    Explore the world of football like never before with Football Player Charts. Our website offers comprehensive data and insightful analysis on every player's performance, providing you with a deep understanding of their impact on each team they have been a part of. From match statistics to interactive charts, we offer a range of tools to help you make informed decisions and gain a new perspective on the game. 
+                </p>
+            </div>
+            <div class="description">
+                <p>What kind of information you can find?</p>
+                <p>
+                    Player stats provide a wealth of information about an athlete's performance on the field. General statistics such as games played, goals, assists, minutes played, and goals per game give an overview of the player's overall performance. Additionally, tracking goal involvement percentage and goals and assists per season can provide insight into the player's consistency and impact on the team. Positional statistics can also be analyzed to determine the player's strengths and weaknesses in different roles. Lastly, performance by competition can give an indication of the player's ability to perform under pressure and against different levels of competition.
+                </p>            
+            </div>
+            <div class="description">
+                <p>What are the sources and how are they collected?</p>
+                <p>The process involves regularly accessing transfermarkt.com and extracting the latest data available. The collected information is then used to update existing records and ensure accuracy in the system.</p>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="{{ url_for('static', filename='js/media.js') }}"></script>
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}
+

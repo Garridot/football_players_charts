@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* base.css */
+
+@font-face {
+    font-family: "NeueMontreal-Light";
+    src: url('../fonts/NeueMontreal/NeueMontreal-Light.otf');
+}
+
+@font-face {
+    font-family: "NeueMontreal-Bold";
+    src: url('../fonts/NeueMontreal/NeueMontreal-Bold.otf');
+}
+
+@font-face {
+    font-family: "NeueMontreal-Italic";
+    src: url('../fonts/NeueMontreal/NeueMontreal-Bolditalic.otf');
+}
+
+@font-face {
+    font-family: "NeueMontreal-Medium-Italic";
+    src: url('../fonts/NeueMontreal/NeueMontreal-MediumItalic.otf');
+}
+
+@font-face {
+    font-family: "NeueMontreal-Regular";
+    src: url('../fonts/NeueMontreal/NeueMontreal-Regular.otf');
+}
+
+@font-face {
+    font-family: "GoshaSans-Bold";
+    src: url('../fonts/GoshaSans/GoshaSans-Bold.otf');
+}
+
+@font-face {
+    font-family: "GoshaSans-Regular";
+    src: url('../fonts/GoshaSans/GoshaSans-Regular.otf');
+}
+
+
+
+/* VARIABLE COLORS */
+:root {
+    --primary-color: #c7c7c7;
+    --second-color: #cedddd;
+    --primary-highlighted-color: #a31f0e;
+    --second-highlighted-color: rgb(151, 23, 12);
+    --backgroud-color : rgb(13,13,13);    
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    font-family: "NeueMontreal-Light";
+}
+
+body{
+    background: var(--backgroud-color);
+}
+
+
+/* SCROLL BAR */
+::-webkit-scrollbar
+{
+	width: 2px;
+	background: none;
+}
+::-webkit-scrollbar-thumb
+{
+	background-color: var(--primary-color);
+	height:1px;	
+}
+
+
+/* #### HEADER #### */
+
+header {    
+    position: fixed;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;   
+    z-index: 3;
+    padding: 3rem 0;
+    transition: all 2s;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header h3{
+    color: #c7c7c7;
+    letter-spacing: 1px;
+    font-weight: 100;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+header h3 a{
+    color: #c7c7c7;
+    text-decoration: none;
+}
+
+
+
+
+footer{
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    border-top: .2px solid rgba(170, 170, 170, 0.301);
+    margin: 20vh 0 0;
+}
+
+footer h6{
+    width: 100%;
+    text-align: center;
+    color: var(--primary-color);
+    font-family: "NeueMontreal-Light";
+    letter-spacing: 1px;
+    font-size: 1.5vw;
+    font-weight: 100;
+}
+
+footer a{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+
+@media(max-width:1200px){
+    footer h6 {        
+        font-size: 1.8vw;        
+    }
+}
+
+@media(max-width:1000px){
+    footer h6 {        
+        font-size: 2vw;        
+    }
+}
+
+@media(max-width:800px){
+    header h3 {        
+        letter-spacing: 2px;        
+        font-size: 1.8vw;        
+    }
+    footer h6 {        
+        font-size: 2.5vw;        
+    }
+}
+
+@media(max-width:600px){
+    header h3 {
+        font-size: 2.5vw;        
+    }
+    footer h6 {        
+        font-size: 3vw;        
+    }
+}
+@media(max-width:400px){
+    header h3 {
+        font-size: 3vw;        
+    }
+    footer h6 {        
+        font-size: 3.5vw;        
+    }
+}
