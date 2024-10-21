@@ -2,9 +2,9 @@ import requests
 import json
 
 
-URL_PLAYERS_STATS      = 'https://football-player-charts-stats-api.onrender.com/player_stats/'
+URL_PLAYERS_STATS      = 'https://football-player-charts-stats-api.onrender.com/player_stats_general/'
 URL_PLAYERS            = 'https://football-player-charts-stats-api.onrender.com/players/'
-URL_STATS_BY_POSITION  = 'https://football-player-charts-stats-api.onrender.com/player_stats_by_position/'
+URL_STATS_BY_POSITION  = 'https://football-player-charts-stats-api.onrender.com/player_stats_position/'
 
 ### Function to retrieve player data from the API
 def get_list_players():    

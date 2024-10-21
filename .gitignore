@@ -1,0 +1,32 @@
+# Virtual environment
+venv/
+
+# Compiled Python files
+__pycache__/
+*.pyc
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Environment variables
+.env
+
+# Spotify cache
+.cache
+
+# Miscellaneous
+*.DS_Store
+*.pyc
+*.pyo
+*.pyc
+*.pyo
+*.pyc
+*.pyo
+
+# IDE-specific files (e.g., PyCharm)
+.idea/
+*.iml
+
+# SQLITE
+*.db 
