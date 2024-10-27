@@ -1,12 +1,12 @@
 /* ========== Fonts ========== */
 @font-face {
     font-family: "NeueMontreal-Light";
-    src: url('../fonts/NeueMontreal/NeueMontreal-Light.otf');
+    src: url('../fonts/NeueMontreal/NeueMontreal_Light.otf');
 }
 
 @font-face {
     font-family: "NeueMontreal-Italic";
-    src: url('../fonts/NeueMontreal/NeueMontreal-Bolditalic.otf');
+    src: url('../fonts/NeueMontreal/NeueMontreal_Bolditalic.otf');
 }
 
 /* ========== Global Styles ========== */
