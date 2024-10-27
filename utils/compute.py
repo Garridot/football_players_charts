@@ -1,8 +1,9 @@
 import pandas as pd 
 
-def general_stats(stats):
+def general_stats(data,stats):
     """ Function to compute general statistics based on player stats """
-    context = {}    
+    context = {}   
+    context['player'] = data["player"]       
     context['goals']    = 0
     context['assists']  = 0
     context['games']    = 0  

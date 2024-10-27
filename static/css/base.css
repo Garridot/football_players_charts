@@ -1,19 +1,7 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
-
-/* base.css */
-
+/* ========== Fonts ========== */
 @font-face {
     font-family: "NeueMontreal-Light";
     src: url('../fonts/NeueMontreal/NeueMontreal-Light.otf');
-}
-
-@font-face {
-    font-family: "NeueMontreal-Bold";
-    src: url('../fonts/NeueMontreal/NeueMontreal-Bold.otf');
 }
 
 @font-face {
@@ -21,47 +9,110 @@
     src: url('../fonts/NeueMontreal/NeueMontreal-Bolditalic.otf');
 }
 
-@font-face {
-    font-family: "NeueMontreal-Medium-Italic";
-    src: url('../fonts/NeueMontreal/NeueMontreal-MediumItalic.otf');
+/* ========== Global Styles ========== */
+
+*{
+    margin: 0;
+    padding: 0;
 }
 
-@font-face {
-    font-family: "NeueMontreal-Regular";
-    src: url('../fonts/NeueMontreal/NeueMontreal-Regular.otf');
-}
-
-@font-face {
-    font-family: "GoshaSans-Bold";
-    src: url('../fonts/GoshaSans/GoshaSans-Bold.otf');
-}
-
-@font-face {
-    font-family: "GoshaSans-Regular";
-    src: url('../fonts/GoshaSans/GoshaSans-Regular.otf');
-}
-
-
-
-/* VARIABLE COLORS */
 :root {
-    --primary-color: #c7c7c7;
-    --second-color: #cedddd;
-    --primary-highlighted-color: #a31f0e;
-    --second-highlighted-color: rgb(151, 23, 12);
-    --backgroud-color : rgb(13,13,13);    
-}
-
-h1,h2,h3,h4,h5,h6,p{
-    font-family: "NeueMontreal-Light";
+    --color-text: #c7c7c7;
+    --color-background: rgb(14 14 14);
+    --color-highlighted: #a31f0e;         
+    --color-border: #aaa;
+    --font-primary: "NeueMontreal-Italic";
+    --font-secondary: "NeueMontreal-Light";
+    --font-size-primary: 0.85rem;
+    --line-height-primary: 1.5;    
+    --font-size-secondary: 0.75rem;
+    --line-height-secondary: 1;
+    --font-size-header: smaller;
+    --font-size-statement: 3rem;    
 }
 
 body{
-    background: var(--backgroud-color);
+    background: var(--color-background);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* ========== Global Styles: Components ========== */
 
-/* SCROLL BAR */
+.section-container {
+    width: 100%;    
+}
+.h-100 {
+    height: 100vh;
+}
+.section-margin {
+    margin: 10vh auto;
+}
+.section-row {
+    width: 50%;
+    height: 100%;
+}
+.section--col {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.section-header {
+    margin: 0.5rem 0;
+}
+.s-header-secondary {
+    margin: 2rem 0;
+}
+.secttion-info {
+    margin: 0.5rem 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+/* ========== Global Styles: Text ========== */
+
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--font-primary);    
+}
+p, li, a, input, select{
+    font-family: var(--font-secondary);
+    text-decoration: none;
+    color: var(--color-text);
+} 
+
+h1.section-title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.s-header-secondary h1.section-title {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.text-stats {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.message-error {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.message-error p {
+    text-align: center;
+}
+
+/* ========== Scroll Bar ========== */
 ::-webkit-scrollbar
 {
 	width: 2px;
@@ -69,7 +120,7 @@ body{
 }
 ::-webkit-scrollbar-thumb
 {
-	background-color: var(--primary-color);
+	background-color: var(--color-text);
 	height:1px;	
 }
 
@@ -82,8 +133,8 @@ header {
     margin: auto;
     display: flex;
     justify-content: space-between;   
-    z-index: 100;
-    padding: 3rem 0;
+    z-index: 100;top: 0;
+    padding: 2rem 0;
     transition: all 2s;
     align-items: center;
     left: 50%;
@@ -102,8 +153,6 @@ header h3 a{
     color: #c7c7c7;
     text-decoration: none;
 }
-
-
 
 
 footer{

@@ -1,5 +1,5 @@
 // CustomChart class for handling chart creation and animation
-class CustomChart {
+export class CustomChart {
     constructor() {
         this.chartConfig = this.getConfig();
         this.chart = null;
@@ -55,7 +55,7 @@ class CustomChart {
                         display: null,
                         text: null,
                         align: 'start',
-                        color: '#aaa',  
+                        color: '#c7c7c7',  
                         padding: { bottom: 10 } 
                     },
                     legend: {
@@ -88,7 +88,7 @@ class CustomChart {
     }
 }
 // Function to configure the chart for performance by season
-function performbySeasonConfig(stats) {
+export function performbySeasonConfig(stats) {
     var data = {
         labels: stats.seasons,
         datasets: [
@@ -96,45 +96,69 @@ function performbySeasonConfig(stats) {
                 label: 'Goals',
                 data: stats.goals,
                 fill: 'start',
-                backgroundColor: '#720303',
-                borderWidth: .2,
-                stack: 'Stack 0',
+                borderColor: '#720303',
+                pointRadius: 2.5,
+                borderWidth: 3,
             },
             {
                 label: 'Assists',
                 data: stats.assists,
                 fill: 'start',
-                backgroundColor: '#fffeee',               
-                stack: 'Stack 1',
+                borderColor: '#fffeee',  
+                pointRadius: 2.5,
+                borderWidth: 3,
             },
             {
                 label: 'Goals Involvements',
                 data: stats.goals_involvements,
                 fill: 'start',
-                borderColor: '#aaa',
-                pointBackgroundColor: 'white',
-                type: 'line',                
-                pointRadius: 2,
-                borderWidth: 1,                        
+                borderColor: 'lightsalmon',
+                pointRadius: 2.5,
+                borderWidth: 3, 
             },
             {
                 label: "Games",
                 data: stats.games,
                 fill: 'start',
-                backgroundColor: "#17161b",
+                backgroundColor: "#3c3754",
+                type: 'bar', 
             },
         ]
     };
 
     return {       
-        type: "bar",
+        type: "line",
         data: data,
         options:{
             indexAxis : "x",
             interaction: {
                 mode: 'index',
                 intersect: true,
-            },  
+            },              
+            plugins: {               
+                title: {
+                    display: true,
+                    text: 'Player performance throughout the seasons.',                 
+                    align: 'start',
+                    color: '#c7c7c7',                
+                    font: {
+                        size: 16, 
+                        family: "NeueMontreal-Light",
+                        weight: 100,                    
+                    },
+                    padding: { bottom: 5 }
+                },
+                legend: {
+                    display: true,
+                    align: 'start',   
+                    font: {
+                        size: 15, 
+                        family: "NeueMontreal-Light",                                       
+                    },                 
+                    labels: { color: '#c7c7c7', margin:30, },
+                    padding: { bottom: 5 }                
+                }
+            },            
             maintainAspectRatio: false,              
             responsive: true,
             scales    : scalesLIneChart,
@@ -144,7 +168,7 @@ function performbySeasonConfig(stats) {
     };
 }
 // Function to configure the chart for performance by position
-function performPositionConfig(stats) {
+export function performPositionConfig(stats) {
  
     // Object.keys(stats) returns an array of keys (positions)
     var positions = Object.keys(stats);
@@ -160,10 +184,10 @@ function performPositionConfig(stats) {
         let statsForPosition = stats[position];
 
         // Log the position and corresponding dictionary
-        positionLabels.push(position)
-        gamesData.push(statsForPosition.games)
-        goalData.push(statsForPosition.goals)
-        assitsData.push(statsForPosition.assists)            
+        positionLabels.push(position);
+        gamesData.push(statsForPosition.games);
+        goalData.push(statsForPosition.goals);
+        assitsData.push(statsForPosition.assists);            
       }
 
     var data = {        
@@ -171,7 +195,7 @@ function performPositionConfig(stats) {
         datasets: [{            
             label: 'Matches Played',
             data: stats.games,
-            backgroundColor: "#17161b",              
+            backgroundColor: "#3c3754",              
         },
         {            
             label: 'Goals',
@@ -195,6 +219,12 @@ function performPositionConfig(stats) {
                 mode: 'index',
                 intersect: true,
             },  
+            plugins: {
+                title: {
+                    display:true,
+                    title: "Tracking player performance throughout the seasons."   
+                }   
+            },
             maintainAspectRatio: false,              
             responsive: true,
             scales:{
@@ -211,10 +241,10 @@ function performPositionConfig(stats) {
     };
 }
 // Function to configure the doughnut chart for goals involvements
-function goalsInvolvementsConfig(stats){
-    var goalPCT     = ( (stats["player goals"] / stats["team goals"]) * 100 )
-    var assistsPCT  = ( (stats["player assists"] / stats["team goals"]) * 100 )
-    var teamGoalPCT = 100 - (goalPCT + assistsPCT)  
+export function goalsInvolvementsConfig(stats){
+    var goalPCT     = ( (stats["player goals"] / stats["team goals"]) * 100 ); 
+    var assistsPCT  = ( (stats["player assists"] / stats["team goals"]) * 100 );
+    var teamGoalPCT = 100 - (goalPCT + assistsPCT); 
 
     var data = {
         labels: [ "Player's Goals","Player's Assists", "Teams's Goals" ],
@@ -226,7 +256,7 @@ function goalsInvolvementsConfig(stats){
                 backgroundColor: [
                 "#720303",
                 "#fffeee",
-                "#17161b",
+                "#3c3754",
                 ],
                 hoverOffset: 10  
             }
