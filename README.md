@@ -32,7 +32,7 @@ pip install -r requirements.txt
 4. Run the application:
 
 ```bash  
-python run.py
+python app.py
 ```
 
 Visit the web application in your browser and start exploring football player statistics!

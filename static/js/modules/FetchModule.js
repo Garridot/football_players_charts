@@ -1,6 +1,6 @@
 import { renderMessageError } from './RenderModule.js';
 
-async function fetchData(url, options = {}, retries = 3, timeout = 5000) {
+async function fetchData(url, options = {}, retries = 10, timeout = 5000) {
     try {
         const controller = new AbortController(); // Control para manejar el timeout
         const signal = controller.signal;
