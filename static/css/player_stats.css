@@ -115,6 +115,7 @@ section.general {
     list-style: none;
     padding: .2rem 0;
     border-bottom: 1px solid #c7c7c74f;
+    padding-bottom: 0.3rem;
     font-size: 1rem;
 }
 
@@ -176,10 +177,17 @@ section.perfom_seasons ul li{
 
 #perfom_position ul li {
     flex: 0 0 auto;
-    width: 16.66666667%;
+    width: 25%;
     font-size: 1rem;
-    padding: 0 1rem;
+    padding: 0;
     border: none;
+    border-bottom: 1px solid #c7c7c74f;
+    padding-bottom: 0.3rem;
+    text-align: center;
+}
+
+#perfom_position ul li:nth-child(1) {
+    text-align: start;
 }
 
 /* #### PERFORMANCE BY COMPETIIONS #### */
@@ -191,6 +199,10 @@ section.competitions {
 
 section.competitions ul {
     list-style: none;
+    border-bottom: 1px solid #c7c7c74f;
+    padding-bottom: 0.3rem;
+    width: 95%;
+    margin: auto;
 }
 
 section.competitions ul li:nth-child(1) {

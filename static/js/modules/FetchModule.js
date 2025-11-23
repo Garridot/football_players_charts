@@ -19,6 +19,7 @@ async function fetchData(url, options = {}, retries = 10, timeout = 5000) {
         }        
 
         const data = await response.json(); // Parsear el JSON
+ 
         return data;
     } catch (error) {
                 
@@ -129,7 +130,7 @@ export async function getPlayerStatsByGoalsInvolvements(playerId, filters) {
         const data = await fetchData(url, options);        
         return { status: 200, data: data };        
     } 
-    catch (error) {        
+    catch (error) {
         if (error instanceof Error && error.message.includes('404')) { 
             var message = `${error.message} STATS FOR : ${options["body"]}`;
             return { status: 404, data: message };

@@ -220,7 +220,7 @@ export const renderGoalsInvolvements = (res) => {
             </div>           
         </div>        
     </div> 
-    <div class="section-row">
+    <div class="section-row" style="width: 80%; margin:auto;">
         <div class="section--col">
             <div class="graph--">            
                 <canvas id="goalsInvolvementsChart"></canvas>
@@ -229,7 +229,7 @@ export const renderGoalsInvolvements = (res) => {
             </div>            
         </div>      
     </div>   
-    <div class="section-row">
+    <div class="section-row" style="width: 100%; margin:3rem auto;">
         <div class="section--col">
             <div class="description--" id="goals_involvements">
             </div>
@@ -284,14 +284,14 @@ export const renderBySeason = (res) => {
             </div>
         </div>
     </div>
-    <div class="section-row">
+    <div class="section-row" style="width: 80%; margin: 3rem auto;">
         <div class="section--col">
             <div class="graph--">            
                 <canvas id="perfomSeasonsChart"></canvas> 
             </div>
         </div>               
     </div>   
-    <div class="section-row">                
+    <div class="section-row" style="width: 100%; margin:auto;">                
         <div class="section--col">
             <div class="description--" id="perfom_seasons">  
                 <li class="text-stats">Best seasons:</li>                      
@@ -347,8 +347,15 @@ export const renderPerformPosition = (res) => {
                 <h1 class="section-title">Performance by position</h1>
             </div>
         </div>
-    </div>       
-    <div class="section-row">                
+    </div>  
+    <div class="section-row" style="width: 80%; margin: 3rem auto;">
+        <div class="section--col">
+            <div class="graph--">            
+                <canvas id="performPosition"></canvas>    
+            </div>
+        </div>                
+    </div>  
+    <div class="section-row" style="width: 100%; margin:auto;">                
         <div class="section--col">
             <div class="description--">
                 <ul class="container">
@@ -360,19 +367,12 @@ export const renderPerformPosition = (res) => {
                 <div class="data--"></div>
             </div>
         </div>
-    </div> 
-    <div class="section-row">
-        <div class="section--col">
-            <div class="graph--">            
-                <canvas id="performPosition"></canvas>    
-            </div>
-        </div>                
-    </div>        
+    </div>       
     `;
 
     if(res.status === 200){
         res = res.data;
-        console.log(res)
+        
         var table = document.querySelector("#perfom_position .data--");
 
         while (table.hasChildNodes()){ table.removeChild(table.lastChild);}
